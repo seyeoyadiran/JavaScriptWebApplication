@@ -11,7 +11,7 @@ const progressBar = document.getElementById("progressBar");
 const getFavouritesBtn = document.getElementById("getFavouritesBtn");
 
 // Step 0: Store your API key here for reference and easy access.
-const API_KEY = "live_qpcWOQBtvxeDe2PFxvWBf3wOmRGMtPEFIUmeprV7DP8RKIkE94GNBjfrCyyFf93o";
+const API_KEY = "live_nZAI1f5WqFU4zSd8EkzI2YbGCsHQHlwRbyeQUxnH0VA12yCddcxmlzZ05aRDuJrC";
 
 /**
  * 1. Create an async function "initialLoad" that does the following:
@@ -23,7 +23,7 @@ const API_KEY = "live_qpcWOQBtvxeDe2PFxvWBf3wOmRGMtPEFIUmeprV7DP8RKIkE94GNBjfrCy
  */
 async function initialLoad(){
     try{
-      const response = await fetch('https://api.thecatapi.com/v1/breeds')
+      const response = await fetch('https://api.thedogapi.com/v1/breeds')
       if (!response.ok) throw new Error('Breed not found')
 
         console.log(response)
@@ -83,7 +83,7 @@ async function breedSelectionHandler(e){
       redirect: 'follow'
     };
   
-    const response = await fetch(`https://api.thecatapi.com/v1/images/search?breed_ids=${breedId}&limit=10`, requestOptions);
+    const response = await fetch(`https://api.thedogapi.com/v1/images/search?breed_ids=${breedId}&limit=10`, requestOptions);
 
         if(!response.ok) throw Error(' Not working')
         const images = await response.json();
@@ -95,19 +95,18 @@ async function breedSelectionHandler(e){
         images.forEach(imageInfo => {
           const imageElement = document.createElement('img');
           imageElement.src = imageInfo.url
-          imageElement.alt = 'Picture of a cat';
+          imageElement.alt = 'Picture of a Dog';
           const imgUrl = imageInfo.url;
           const imgId = imageInfo.id; 
-          const imgAlt = `cat image ${imgId}`
+          const imgAlt = `Dog image ${imgId}`
           
           const carouselElement = Carousel.createCarouselItem(imgUrl, imgAlt, imgId); 
           Carousel.appendCarousel(carouselElement); 
           Carousel.start();
 
-         // imageElement.classList.add('carousel-item')
-         // carousel.appendChild(imageElement)
+        
         });
-
+/*
         console.log(images[0].breeds[0]);
         const breedInfo = images[0].breeds[0];
         const breedName = document.createElement('h2');
@@ -128,7 +127,7 @@ async function breedSelectionHandler(e){
         infoDump.appendChild(breedLife);
         infoDump.appendChild(breedWiki);
     
-
+*/
   }
   catch(e){
     console.log(error)

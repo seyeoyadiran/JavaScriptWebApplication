@@ -12021,7 +12021,7 @@ var progressBar = document.getElementById("progressBar");
 var getFavouritesBtn = document.getElementById("getFavouritesBtn");
 
 // Step 0: Store your API key here for reference and easy access.
-var API_KEY = "live_qpcWOQBtvxeDe2PFxvWBf3wOmRGMtPEFIUmeprV7DP8RKIkE94GNBjfrCyyFf93o";
+var API_KEY = "live_nZAI1f5WqFU4zSd8EkzI2YbGCsHQHlwRbyeQUxnH0VA12yCddcxmlzZ05aRDuJrC";
 
 /**
  * 1. Create an async function "initialLoad" that does the following:
@@ -12042,7 +12042,7 @@ function _initialLoad() {
         case 0:
           _context.prev = 0;
           _context.next = 3;
-          return fetch('https://api.thecatapi.com/v1/breeds');
+          return fetch('https://api.thedogapi.com/v1/breeds');
         case 3:
           response = _context.sent;
           if (response.ok) {
@@ -12147,7 +12147,7 @@ function breedSelectionHandler(_x) {
  */
 function _breedSelectionHandler() {
   _breedSelectionHandler = _asyncToGenerator(/*#__PURE__*/_regeneratorRuntime().mark(function _callee2(e) {
-    var breedId, headers, requestOptions, response, images, breedInfo, breedName, breedDescr, breedLife, breedWiki;
+    var breedId, headers, requestOptions, response, images;
     return _regeneratorRuntime().wrap(function _callee2$(_context2) {
       while (1) switch (_context2.prev = _context2.next) {
         case 0:
@@ -12168,7 +12168,7 @@ function _breedSelectionHandler() {
             redirect: 'follow'
           };
           _context2.next = 7;
-          return fetch("https://api.thecatapi.com/v1/images/search?breed_ids=".concat(breedId, "&limit=10"), requestOptions);
+          return fetch("https://api.thedogapi.com/v1/images/search?breed_ids=".concat(breedId, "&limit=10"), requestOptions);
         case 7:
           response = _context2.sent;
           if (response.ok) {
@@ -12188,42 +12188,47 @@ function _breedSelectionHandler() {
           images.forEach(function (imageInfo) {
             var imageElement = document.createElement('img');
             imageElement.src = imageInfo.url;
-            imageElement.alt = 'Picture of a cat';
+            imageElement.alt = 'Picture of a Dog';
             var imgUrl = imageInfo.url;
             var imgId = imageInfo.id;
-            var imgAlt = "cat image ".concat(imgId);
+            var imgAlt = "Dog image ".concat(imgId);
             var carouselElement = Carousel.createCarouselItem(imgUrl, imgAlt, imgId);
             Carousel.appendCarousel(carouselElement);
             Carousel.start();
-
-            // imageElement.classList.add('carousel-item')
-            // carousel.appendChild(imageElement)
           });
-          console.log(images[0].breeds[0]);
-          breedInfo = images[0].breeds[0];
-          breedName = document.createElement('h2');
-          breedName.textContent = breedInfo.name;
-          breedDescr = document.createElement('p');
-          breedDescr.textContent = breedInfo.description;
-          breedLife = document.createElement('p');
-          breedLife.textContent = breedInfo.life_span;
-          breedWiki = document.createElement('p');
-          breedWiki.textContent = breedInfo.wikipedia_url;
-          infoDump.appendChild(breedName);
-          infoDump.appendChild(breedDescr);
-          infoDump.appendChild(breedLife);
-          infoDump.appendChild(breedWiki);
-          _context2.next = 34;
+          /*
+                  console.log(images[0].breeds[0]);
+                  const breedInfo = images[0].breeds[0];
+                  const breedName = document.createElement('h2');
+                  breedName.textContent = breedInfo.name;
+                
+          
+                  const breedDescr = document.createElement('p');
+                  breedDescr.textContent = breedInfo.description
+          
+                  const breedLife = document.createElement('p');
+                  breedLife.textContent = breedInfo.life_span
+          
+                  const breedWiki = document.createElement('p');
+                  breedWiki.textContent = breedInfo.wikipedia_url
+          
+                  infoDump.appendChild(breedName);
+                  infoDump.appendChild(breedDescr);
+                  infoDump.appendChild(breedLife);
+                  infoDump.appendChild(breedWiki);
+              
+          */
+          _context2.next = 20;
           break;
-        case 31:
-          _context2.prev = 31;
+        case 17:
+          _context2.prev = 17;
           _context2.t0 = _context2["catch"](0);
           console.log(error);
-        case 34:
+        case 20:
         case "end":
           return _context2.stop();
       }
-    }, _callee2, null, [[0, 31]]);
+    }, _callee2, null, [[0, 17]]);
   }));
   return _breedSelectionHandler.apply(this, arguments);
 }
@@ -12352,7 +12357,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "63623" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "65339" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];
