@@ -6748,7 +6748,7 @@ function testing123() {
   var moreInfo = document.getElementById("AddingFunctionality");
   var dog = document.getElementById('dog');
   var heading1 = document.createElement('h1');
-  heading1.textContent = "Refresh to see more dogs without choosing a breed or click dog image to see more dogs";
+  heading1.textContent = "click dog image to see more dogs or refresh the page to see a fast slideshow of a few dogs";
   moreInfo.append(heading1);
   console.log(heading1);
   //heading1.textContent = 'Look at the slideshow of random dogs'
@@ -6782,11 +6782,9 @@ function testing123() {
     }));
     return _getNewDog.apply(this, arguments);
   }
-  for (var i = 0; i < 10; i++) {
+  for (var i = 0; i < 20; i++) {
     getNewDog();
   }
-
-  // moreInfo.append(dogInfo)
 }
 },{"bootstrap":"node_modules/bootstrap/dist/js/bootstrap.esm.js"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
@@ -6813,7 +6811,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "59563" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50421" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];

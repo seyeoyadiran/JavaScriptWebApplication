@@ -8,7 +8,7 @@ export function testing123(){
     const dog = document.getElementById('dog');
     
     const heading1 = document.createElement('h1');
-    heading1.textContent = "Refresh to see more dogs without choosing a breed or click dog image to see more dogs"
+    heading1.textContent = "click dog image to see more dogs or refresh the page to see a fast slideshow of a few dogs"
 
     moreInfo.append(heading1)
 
@@ -24,12 +24,10 @@ export function testing123(){
 
         dog.src = url;
         dog.style.cursor = 'pointer';
+        
     }
 
-    for (let i = 0; i < 10; i++){
+    for (let i = 0; i < 20; i++){
         getNewDog();
     }
-    
-    
-   // moreInfo.append(dogInfo)
 }

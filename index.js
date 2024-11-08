@@ -1,7 +1,7 @@
 import * as Carousel from "./Carousel.js";
 import axios from "axios";
 import { testing123 } from "./LastImportModule.js";
-
+import * as postandrequest from "./putpostrequest.js"
 
 // The breed selection input element.
 const breedSelect = document.getElementById("breedSelect");
@@ -101,3 +101,4 @@ async function breedSelectionHandler(e){
 
 //Last Imported Functions
 testing123();
+postandrequest.addFavorite();
