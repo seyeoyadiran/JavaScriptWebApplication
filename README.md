@@ -1,4 +1,4 @@
-# JavaScriptWebApplication
+# JavaScript WebApplication
 
 ## Objectives
 - Use asynchronous JavaScript tools to build a responsive web application.
